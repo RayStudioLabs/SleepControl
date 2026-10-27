@@ -1,0 +1,16 @@
+.build/
+.swiftpm/
+build/
+*.xcodeproj
+xcuserdata/
+DerivedData/
+.DS_Store
+
+# Local credentials and editor state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.idea/
+.vscode/
