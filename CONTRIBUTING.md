@@ -13,6 +13,8 @@ swift test
 
 Tests use temporary directories and simulated power drivers. Do not add tests that change real `pmset` settings, put the computer to sleep, or alter a contributor's real AI configuration. Use `SLEEPCONTROL_STATE_DIRECTORY` and temporary client configuration directories when testing helper behavior.
 
+For installer changes, run `./scripts/build-dmg.sh` with Python 3.10+. The script installs the pinned tools from `scripts/requirements-dmg.txt` in `.build/dmg-tools/`. `scripts/generate-dmg-background.swift` draws 1× and 2× artwork, and `scripts/dmg-settings.py` defines the matching Finder window and icon positions. Mount the final image and check its layout, Applications link, bundled license, and app signature before publishing it.
+
 ## Changes to check
 
 - Keep English and Chinese resources in `Sources/SleepControl/Resources/` in sync. Use `L10n.text` for visible text and diagnostics.

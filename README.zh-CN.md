@@ -30,6 +30,8 @@ AI 检测是可选功能。没有安装 Codex 或 Claude Code，也能使用其�
 3. 推出磁盘镜像，再从“应用程序”打开已安装的 SleepControl。
 4. 点击菜单栏中的电池图标，打开设置面板。
 
+安装盘中的应用文件名为 `SleepControl.app`。如果旧版文件名是 `SleepControl（Mac 休眠控制）.app`，请先退出旧版，再用新版替换它，保留一份安装即可。
+
 当前构建使用本地 ad-hoc 签名，**尚未经过 Apple 公证**。首次运行可能被 macOS 阻止。确认下载来源后，如果系统提供该选项，可到“系统设置 → 隐私与安全性”中选择“仍要打开”。也可以自行从源码构建。
 
 应用平时只在菜单栏运行，不出现在 Dock 和 Command-Tab 列表中。使用说明窗口被其他窗口挡住时，可以重新打开菜单栏面板，再点问号把它置前。
@@ -100,6 +102,8 @@ swift test
 ```bash
 ./scripts/build-dmg.sh
 ```
+
+打包 DMG 还需要 Python 3.10 或更高版本。首次运行时，脚本会将固定版本的打包工具下载到 `.build/dmg-tools/`，这些工具不会装进应用。可通过 `DMG_PYTHON` 指定 Python 路径。安装盘打开后会显示适配 Retina 的背景、固定位置的应用图标和 Applications 快捷方式，协议与安装说明放在隐藏的 `.documentation` 文件夹中。
 
 输出为 `build/SleepControl-<版本>-<架构>.dmg` 及 `.sha256` 校验文件。脚本不会自动生成通用二进制。最低部署目标为 macOS 13；Intel 版本需要另外构建和验证。
 

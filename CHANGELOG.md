@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.2
+
+- Redesigned the DMG as a two-icon drag-and-drop installer, with a Retina background, green direction arrow, and Chinese/English instructions.
+- Saved the Finder window size, icon positions, and view settings in the image.
+- Moved license and installation notes into a hidden folder to keep the install window clear.
+- Added pinned, isolated build tools for reproducible DMG layout generation.
+
+重新设计 DMG 安装界面：只显示应用和 Applications 两个图标，配有高清背景、绿色箭头和中英文拖放提示。安装盘会保存窗口及图标布局，协议与详细说明收进隐藏文件夹。
+
 ## 0.3.1
 
 First public source release, under the MIT License.

@@ -30,6 +30,8 @@ AI task detection is optional. The other sleep controls work without Codex or Cl
 3. Eject the disk image and open the installed app.
 4. Click its battery icon in the menu bar to open the settings panel.
 
+The installer contains `SleepControl.app`. When upgrading an older copy named `SleepControl（Mac 休眠控制）.app`, quit it and replace that copy with the new app so you keep a single installation.
+
 Current locally built packages are ad-hoc signed and **not notarized by Apple**. macOS may block the first launch. After checking the download source, use **System Settings → Privacy & Security → Open Anyway** if macOS offers that option. You can also build the app yourself.
 
 SleepControl normally runs as a menu bar app, so it does not appear in the Dock or Command-Tab. To bring the help window forward, open the menu bar panel and click its question-mark button.
@@ -100,6 +102,8 @@ To create a drag-and-drop installer for the current processor architecture:
 ```bash
 ./scripts/build-dmg.sh
 ```
+
+DMG packaging also requires Python 3.10 or later. On the first run, the script downloads pinned build tools into `.build/dmg-tools/`; these are not included in the app. Set `DMG_PYTHON` to select a different Python executable. The installer opens with a Retina background, fixed icon positions, and an Applications shortcut. Its license and installation notes are included in a hidden `.documentation` folder.
 
 This writes `build/SleepControl-<version>-<architecture>.dmg` and a `.sha256` checksum file. It does not create a universal binary automatically. macOS 13 is the deployment target; Intel builds need their own build and validation.
 
