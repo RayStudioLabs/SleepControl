@@ -25,7 +25,7 @@ AI task detection is optional. The other sleep controls work without Codex or Cl
 
 ## Install
 
-1. Open [Releases](https://github.com/daichenyu88/SleepControl/releases) and download a DMG for your Mac, if a matching build is available.
+1. Open [Releases](https://github.com/RayStudioLabs/SleepControl/releases) and download a DMG for your Mac, if a matching build is available.
 2. Open the DMG and drag **SleepControl** into **Applications**.
 3. Eject the disk image and open the installed app.
 4. Click its battery icon in the menu bar to open the settings panel.
@@ -89,7 +89,7 @@ The helper is named `SleepControlHelper`; its hook marker is `sleepcontrol-ai-ob
 ## Build and test
 
 ```bash
-git clone https://github.com/daichenyu88/SleepControl.git
+git clone https://github.com/RayStudioLabs/SleepControl.git
 cd SleepControl
 swift test
 ./scripts/build-app.sh
@@ -124,7 +124,7 @@ The two manual power switches change system settings and persist independently o
 
 ## Contributing and support
 
-Bug reports and contributions are welcome through [GitHub Issues](https://github.com/daichenyu88/SleepControl/issues) and pull requests. Include your macOS version, processor type, app version, and steps to reproduce. For detection issues, include the AI client version and whether the task ran locally. Do not post private hook files, tokens, chat content, or unredacted state files.
+Bug reports and contributions are welcome through [GitHub Issues](https://github.com/RayStudioLabs/SleepControl/issues) and pull requests. Include your macOS version, processor type, app version, and steps to reproduce. For detection issues, include the AI client version and whether the task ran locally. Do not post private hook files, tokens, chat content, or unredacted state files.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for development notes.
 

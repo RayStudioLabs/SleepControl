@@ -25,7 +25,7 @@ AI 检测是可选功能。没有安装 Codex 或 Claude Code，也能使用其�
 
 ## 安装
 
-1. 前往 [Releases](https://github.com/daichenyu88/SleepControl/releases)，下载适合你的 Mac 的 DMG（如有对应架构的安装包）。
+1. 前往 [Releases](https://github.com/RayStudioLabs/SleepControl/releases)，下载适合你的 Mac 的 DMG（如有对应架构的安装包）。
 2. 打开 DMG，把 **SleepControl** 拖到 **Applications（应用程序）**。
 3. 推出磁盘镜像，再从“应用程序”打开已安装的 SleepControl。
 4. 点击菜单栏中的电池图标，打开设置面板。
@@ -89,7 +89,7 @@ AI 检测是可选功能。没有安装 Codex 或 Claude Code，也能使用其�
 ## 从源码构建
 
 ```bash
-git clone https://github.com/daichenyu88/SleepControl.git
+git clone https://github.com/RayStudioLabs/SleepControl.git
 cd SleepControl
 swift test
 ./scripts/build-app.sh
@@ -124,7 +124,7 @@ swift test
 
 ## 反馈与贡献
 
-欢迎通过 [GitHub Issues](https://github.com/daichenyu88/SleepControl/issues) 提交问题，或通过 Pull Request 参与改进。请提供 macOS 版本、处理器类型、应用版本和复现步骤。AI 检测问题还请提供客户端版本，以及任务是否在本机执行。不要公开私人钩子配置、令牌、聊天内容或未经脱敏的状态文件。
+欢迎通过 [GitHub Issues](https://github.com/RayStudioLabs/SleepControl/issues) 提交问题，或通过 Pull Request 参与改进。请提供 macOS 版本、处理器类型、应用版本和复现步骤。AI 检测问题还请提供客户端版本，以及任务是否在本机执行。不要公开私人钩子配置、令牌、聊天内容或未经脱敏的状态文件。
 
 开发说明见 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
