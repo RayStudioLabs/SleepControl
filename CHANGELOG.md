@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.3.3 · 2026-10-31
 
 - Use the SleepControl name consistently in the panel, app metadata, and app bundle filename.
 - Exclude status-item clicks from outside-click dismissal so clicking the menu bar icon again closes the open panel.
@@ -9,7 +9,7 @@
 - Use macOS language matching to distinguish Simplified and Traditional Chinese, and allow more room for longer translated panel labels.
 - Check all language catalogs, formatting placeholders, app metadata, and standalone helper resources in localization tests.
 
-界面、帮助、诊断信息和应用名称资源扩展至十种语言，修正繁简中文匹配，并调整较长文案的面板宽度。新增全语言资源、格式占位符和独立助手资源检查。
+界面、帮助和诊断信息扩展至十种语言，修正繁简中文匹配，并调整较长文案的面板宽度。应用名称统一为 SleepControl，修复再次点击菜单栏图标时的面板关闭逻辑，移除手动刷新按钮，改为打开面板时自动读取设置并保留定时更新。新增全语言资源、格式占位符和独立助手资源检查。
 
 ## 0.3.2
 
