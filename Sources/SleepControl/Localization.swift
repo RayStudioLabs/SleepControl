@@ -3,6 +3,7 @@ import Foundation
 /// One catalog for SwiftUI, AppKit and the standalone event helper.
 enum L10n {
     static let resourceBundleName = "SleepControl_SleepControl.bundle"
+    static let supportedLanguages = ["en", "zh-Hans", "zh-Hant", "de", "fr", "es", "ja", "ko", "pt-BR", "it"]
 
     static let resourceBundle: Bundle = {
         let candidates = [
@@ -23,17 +24,18 @@ enum L10n {
     }
 
     static func language(for preferences: [String]) -> String {
-        for preference in preferences {
-            let language = preference.replacingOccurrences(of: "_", with: "-")
-                .lowercased().split(separator: "-").first
-            if language == "zh" { return "zh-Hans" }
-            if language == "en" { return "en" }
-        }
-        return "en"
+        // Use macOS matching for script and region variants (for example zh-HK → zh-Hant).
+        Bundle.preferredLocalizations(from: supportedLanguages, forPreferences: preferences).first ?? "en"
     }
 
     static var language: String { language(for: preferences) }
-    static var panelWidth: CGFloat { language == "en" ? 390 : 320 }
+    static var panelWidth: CGFloat {
+        switch language {
+        case "zh-Hans", "zh-Hant": return 320
+        case "en", "ja", "ko": return 390
+        default: return 460
+        }
+    }
 
     static func text(_ key: String, _ arguments: CVarArg...) -> String {
         localized(key, arguments: arguments, preferences: preferences)

@@ -6,7 +6,7 @@ cd "$(dirname "$0")/.."
 ./scripts/build-app.sh "$@"
 
 APP_NAME="SleepControl.app"
-APP="build/SleepControl（Mac 休眠控制）.app"
+APP="build/$APP_NAME"
 VERSION=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$APP/Contents/Info.plist")
 ARCHS=$(/usr/bin/lipo -archs "$APP/Contents/MacOS/SleepControl")
 case "$ARCHS" in
@@ -23,7 +23,7 @@ mkdir "$DOCUMENTATION"
 /usr/bin/ditto "$APP" "$WORK/$APP_NAME"
 cp LICENSE "$DOCUMENTATION/License.txt"
 cat > "$DOCUMENTATION/安装说明.txt" <<EOF
-Mac 休眠控制（SleepControl）$VERSION
+SleepControl $VERSION
 
 安装：将「${APP_NAME}」拖到旁边的 Applications 文件夹。
 安装后推出此磁盘镜像，从「应用程序」中打开 SleepControl。
@@ -44,7 +44,9 @@ Drag the app to the Applications folder beside it.
 Eject this disk image, then open SleepControl from Applications.
 The app runs in the menu bar. Click its battery icon to open the settings panel.
 
-The interface follows your macOS preferred languages and supports English and Chinese.
+The interface follows your macOS preferred languages and supports Simplified Chinese,
+Traditional Chinese, English, German, French, Spanish, Japanese, Korean,
+Portuguese (Brazil), and Italian.
 After changing your system language, quit and reopen SleepControl.
 
 Requires macOS 13 or later.

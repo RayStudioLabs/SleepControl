@@ -17,10 +17,7 @@ struct SettingsPanelView: View {
         }
         .padding(14)
         .frame(width: L10n.panelWidth)
-        .task {
-            battery.refresh()
-            await model.refresh()
-        }
+        .fixedSize(horizontal: false, vertical: true)
     }
 
     // MARK: - 顶部
@@ -30,20 +27,12 @@ struct SettingsPanelView: View {
             Image(nsImage: BatteryIcon.image(level: Double(battery.info.percent) / 100,
                                              charging: battery.info.isCharging))
             VStack(alignment: .leading, spacing: 1) {
-                Text(L10n.text("Mac Sleep Control")).font(.headline)
+                Text(verbatim: "SleepControl").font(.headline)
                 Text(battery.info.summary).font(.caption).foregroundStyle(.secondary)
             }
             Spacer()
             if model.busy {
                 ProgressView().controlSize(.small)
-            } else {
-                Button {
-                    Task { await model.refresh() }
-                } label: {
-                    Image(systemName: "arrow.clockwise")
-                }
-                .buttonStyle(.borderless)
-                .help(L10n.text("Refresh current settings"))
             }
         }
     }

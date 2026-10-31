@@ -9,6 +9,13 @@
         <string>en</string>
         <string>zh-Hans</string>
         <string>zh-Hant</string>
+        <string>de</string>
+        <string>fr</string>
+        <string>es</string>
+        <string>ja</string>
+        <string>ko</string>
+        <string>pt-BR</string>
+        <string>it</string>
     </array>
     <key>CFBundleExecutable</key>
     <string>SleepControl</string>
@@ -20,7 +27,7 @@
     <key>CFBundleName</key>
     <string>SleepControl</string>
     <key>CFBundleDisplayName</key>
-    <string>SleepControl（Mac 休眠控制）</string>
+    <string>SleepControl</string>
     <key>CFBundleIconFile</key>
     <string>AppIcon.icns</string>
     <key>CFBundlePackageType</key>

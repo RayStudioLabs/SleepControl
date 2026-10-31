@@ -4,7 +4,7 @@
 
 A free, open-source macOS menu bar app for controlling sleep when the lid is closed, when a power adapter is connected, and while local AI coding tasks are running.
 
-SleepControl has an English and Chinese interface. It follows your macOS preferred languages automatically.
+SleepControl supports Simplified Chinese, Traditional Chinese, English, German, French, Spanish, Japanese, Korean, Portuguese (Brazil), and Italian. The interface, help, and diagnostics follow your macOS preferred languages, with English as the fallback. Restart the app after changing your system or per-app language settings.
 
 ## Features
 
@@ -28,7 +28,7 @@ AI task detection is optional. The other sleep controls work without Codex or Cl
 1. Open [Releases](https://github.com/RayStudioLabs/SleepControl/releases) and download a DMG for your Mac, if a matching build is available.
 2. Open the DMG and drag **SleepControl** into **Applications**.
 3. Eject the disk image and open the installed app.
-4. Click its battery icon in the menu bar to open the settings panel.
+4. Click its battery icon in the menu bar to open the settings panel. Click it again to close the panel. Settings refresh automatically when the panel opens and periodically while the app is running.
 
 The installer contains `SleepControl.app`. When upgrading an older copy named `SleepControl（Mac 休眠控制）.app`, quit it and replace that copy with the new app so you keep a single installation.
 
@@ -95,7 +95,7 @@ swift test
 ./scripts/build-app.sh
 ```
 
-The app is generated at `build/SleepControl（Mac 休眠控制）.app`. Copy the complete app bundle to Applications. Do not copy only its executable: the app and standalone AI helper need the bundled language resources.
+The app is generated at `build/SleepControl.app`. Copy the complete app bundle to Applications. Do not copy only its executable: the app and standalone AI helper need the bundled language resources.
 
 To create a drag-and-drop installer for the current processor architecture:
 

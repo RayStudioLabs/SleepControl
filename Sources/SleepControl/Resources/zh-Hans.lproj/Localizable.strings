@@ -56,7 +56,6 @@
 "Keeping your Mac awake · %@" = "AI保护中 · %@";
 "Launch at login" = "登录时自动启动";
 "List separator" = "、";
-"Mac Sleep Control" = "Mac 休眠控制";
 "Marker copied" = "已复制钩子标识";
 "Never" = "永不";
 "No built-in battery" = "无内置电池";
@@ -76,7 +75,6 @@
 "Reading Codex session status timed out." = "读取 Codex 会话状态超时。";
 "Reading Codex status method %@ timed out." = "Codex 状态接口 %@ 读取超时。";
 "Reading task status…" = "正在读取任务状态…";
-"Refresh current settings" = "重新读取当前设置";
 "Run a Claude Code task to check the setup" = "让 Claude Code 做一个任务，看看是否生效";
 "Run a Codex task to check the setup" = "让 Codex 做一个任务，看看是否生效";
 "Show battery percentage in menu bar" = "菜单栏显示电量百分比";

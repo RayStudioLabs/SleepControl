@@ -22,7 +22,7 @@ final class StatusPanelController: NSObject {
         item.autosaveName = "SleepControlStatusItem"
         item.button?.target = self
         item.button?.action = #selector(togglePanel)
-        item.button?.setAccessibilityLabel(L10n.text("Mac Sleep Control"))
+        item.button?.setAccessibilityLabel("SleepControl")
         panel.isReleasedWhenClosed = false
         panel.hidesOnDeactivate = false
         panel.level = .floating
@@ -79,6 +79,7 @@ final class StatusPanelController: NSObject {
 
     func showPanel() {
         battery.refresh()
+        Task { await model.refresh() }
         positionPanel()
         panel.makeKeyAndOrderFront(nil)
         startOutsideClickMonitoring()
@@ -105,7 +106,8 @@ final class StatusPanelController: NSObject {
                     self.hidePanel()
                     return nil
                 }
-            } else if let window = event.window,
+            } else if !self.mouseIsOverStatusItem,
+                      let window = event.window,
                       window !== self.panel,
                       window !== self.item.button?.window,
                       window !== AIHelpWindowController.shared.window,
@@ -115,8 +117,17 @@ final class StatusPanelController: NSObject {
             return event
         }
         globalMonitor = NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { [weak self] _ in
-            self?.hidePanel()
+            guard let self, !self.mouseIsOverStatusItem else { return }
+            self.hidePanel()
         }
+    }
+
+    private var mouseIsOverStatusItem: Bool {
+        guard let button = item.button, let window = button.window else { return false }
+        // Menu bar clicks may also reach the global monitor. Let the button action
+        // toggle the panel instead of hiding it on mouse-down and reopening on mouse-up.
+        let frame = window.convertToScreen(button.convert(button.bounds, to: nil))
+        return frame.contains(NSEvent.mouseLocation)
     }
 
     private func hidePanel() {

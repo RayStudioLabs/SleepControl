@@ -55,8 +55,7 @@
 "In the desktop app, choose a project or Worktree task that runs on this computer and uses the same user configuration. Run a task to check that SleepControl recognizes both active work and pauses for your input." = "In the desktop app, choose a project or Worktree task that runs on this computer and uses the same user configuration. Run a task to check that SleepControl recognizes both active work and pauses for your input.";
 "Keeping your Mac awake · %@" = "Keeping your Mac awake · %@";
 "Launch at login" = "Launch at login";
-"List separator" = "List separator";
-"Mac Sleep Control" = "Mac Sleep Control";
+"List separator" = ", ";
 "Marker copied" = "Marker copied";
 "Never" = "Never";
 "No built-in battery" = "No built-in battery";
@@ -76,7 +75,6 @@
 "Reading Codex session status timed out." = "Reading Codex session status timed out.";
 "Reading Codex status method %@ timed out." = "Reading Codex status method %@ timed out.";
 "Reading task status…" = "Reading task status…";
-"Refresh current settings" = "Refresh current settings";
 "Run a Claude Code task to check the setup" = "Run a Claude Code task to check the setup";
 "Run a Codex task to check the setup" = "Run a Codex task to check the setup";
 "Show battery percentage in menu bar" = "Show battery percentage in menu bar";

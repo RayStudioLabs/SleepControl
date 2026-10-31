@@ -1,11 +1,11 @@
 #!/bin/bash
-# 编译 SleepControl 并打包为 build/SleepControl（Mac 休眠控制）.app（ad-hoc 签名）。
+# 编译 SleepControl 并打包为 build/SleepControl.app（ad-hoc 签名）。
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
 swift build -c release "$@" 2>&1 | tail -n 3
 
-APP="build/SleepControl（Mac 休眠控制）.app"
+APP="build/SleepControl.app"
 rm -rf "$APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp ".build/release/SleepControl" "$APP/Contents/MacOS/SleepControl"

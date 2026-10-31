@@ -9,7 +9,7 @@ When AI protection is enabled, SleepControl merges its own hook entries into:
 - Codex: `~/.codex/hooks.json`, or the directory selected by `CODEX_HOME`.
 - Claude Code: `~/.claude/settings.json`, or the directory selected by `CLAUDE_CONFIG_DIR`.
 
-It keeps other entries and stores backups under `~/Library/Application Support/LidControl/AI/`. Malformed configuration is reported instead of being overwritten. The helper and its English/Chinese resource bundle are installed in that same state directory, so moving the project folder does not break the hooks.
+It keeps other entries and stores backups under `~/Library/Application Support/LidControl/AI/`. Malformed configuration is reported instead of being overwritten. The helper and its complete resource bundle for all ten supported languages are installed in that same state directory, so moving the project folder does not break the hooks.
 
 Commands end with `# sleepcontrol-ai-observer` and call `SleepControlHelper`. The earlier `lidcontrol-ai-observer` entries are migrated. The old helper may remain so clients that have not reloaded their configuration can still report events.
 

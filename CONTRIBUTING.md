@@ -17,7 +17,7 @@ For installer changes, run `./scripts/build-dmg.sh` with Python 3.10+. The scrip
 
 ## Changes to check
 
-- Keep English and Chinese resources in `Sources/SleepControl/Resources/` in sync. Use `L10n.text` for visible text and diagnostics.
+- Keep all ten catalogs in `Sources/SleepControl/Resources/` in sync: `en`, `zh-Hans`, `zh-Hant`, `de`, `fr`, `es`, `ja`, `ko`, `pt-BR`, and `it`. Use `L10n.text` for visible text and diagnostics, preserve format specifiers, and keep commands, paths, and hook identifiers unchanged in translations. Keep app-name resources in `Resources/*.lproj/` and `CFBundleLocalizations` in `Resources/Info.plist` aligned with the catalogs. Run `swift test` to check language matching, catalog completeness, and helper resource deployment.
 - Keep the complete language resource bundle in app and helper deployments.
 - For power changes, cover lid position, power source, manual switches, concurrent work, waiting for input, loss of status, and restoration of settings with simulated drivers.
 - AI integrations must not start or take over conversations, respond to approval requests, or persist chat contents and tool arguments.
